@@ -38,14 +38,7 @@ class _AddNewStudentState extends State<AddNewStudent> {
             children: [
               TextFormField(
                 controller: _nameTEController,
-                decoration: InputDecoration(
-                  hintText: 'Student name',
-                  border: _buildOutlineInputBorder(),
-                  enabledBorder: _buildOutlineInputBorder(),
-                  focusedBorder: _buildOutlineInputBorder().copyWith(
-                    borderSide: BorderSide(width: 2, color: Colors.teal),
-                  ),
-                ),
+                decoration: InputDecoration(hintText: 'Student name'),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
                     return 'Enter student name';
@@ -58,14 +51,7 @@ class _AddNewStudentState extends State<AddNewStudent> {
                 controller: _rollNumberTEController,
                 keyboardType: TextInputType.number,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                decoration: InputDecoration(
-                  hintText: 'Roll number',
-                  border: _buildOutlineInputBorder(),
-                  enabledBorder: _buildOutlineInputBorder(),
-                  focusedBorder: _buildOutlineInputBorder().copyWith(
-                    borderSide: BorderSide(width: 2, color: Colors.teal),
-                  ),
-                ),
+                decoration: InputDecoration(hintText: 'Roll number'),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
                     return 'Enter student roll number';
@@ -79,14 +65,7 @@ class _AddNewStudentState extends State<AddNewStudent> {
               const SizedBox(height: 10),
               TextFormField(
                 controller: _courseTEController,
-                decoration: InputDecoration(
-                  hintText: 'Course name',
-                  border: _buildOutlineInputBorder(),
-                  enabledBorder: _buildOutlineInputBorder(),
-                  focusedBorder: _buildOutlineInputBorder().copyWith(
-                    borderSide: BorderSide(width: 2, color: Colors.teal),
-                  ),
-                ),
+                decoration: InputDecoration(hintText: 'Course name'),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
                     return 'Enter student course name';
@@ -117,13 +96,6 @@ class _AddNewStudentState extends State<AddNewStudent> {
           ),
         ),
       ),
-    );
-  }
-
-  OutlineInputBorder _buildOutlineInputBorder() {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(8),
-      borderSide: BorderSide(color: Colors.teal),
     );
   }
 
@@ -160,16 +132,14 @@ class _AddNewStudentState extends State<AddNewStudent> {
     }
   }
 
-
-
-  void _clearText(){
+  void _clearText() {
     _nameTEController.clear();
     _rollNumberTEController.clear();
     _courseTEController.clear();
   }
 
   @override
-  void dispose(){
+  void dispose() {
     _nameTEController.dispose();
     _rollNumberTEController.dispose();
     _courseTEController.dispose();
